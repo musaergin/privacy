@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung – Modbus++</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #212121;
+            line-height: 1.7;
+        }
+        header {
+            background: #1565C0;
+            color: #fff;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 4px; }
+        header p  { font-size: 0.95rem; opacity: 0.85; }
+        .lang-switch {
+            text-align: center;
+            padding: 16px;
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .lang-switch button {
+            margin: 0 8px;
+            padding: 6px 20px;
+            border: 2px solid #1565C0;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            background: #fff;
+            color: #1565C0;
+            transition: all 0.2s;
+        }
+        .lang-switch button.active {
+            background: #1565C0;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 32px auto;
+            padding: 0 16px 64px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 32px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.15rem;
+            color: #1565C0;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #E3F2FD;
+        }
+        p  { margin-bottom: 10px; }
+        ul { padding-left: 20px; margin-bottom: 10px; }
+        li { margin-bottom: 6px; }
+        .badge {
+            display: inline-block;
+            background: #E3F2FD;
+            color: #1565C0;
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 4px;
+        }
+        .highlight {
+            background: #E8F5E9;
+            border-left: 4px solid #43A047;
+            padding: 12px 16px;
+            border-radius: 0 4px 4px 0;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
+            color: #757575;
+        }
+        [lang-content="en"] { display: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Modbus++</h1>
+    <p>Datenschutzerklärung / Privacy Policy</p>
+</header>
+
+<div class="lang-switch">
+    <button class="active" onclick="setLang('de')">🇩🇪 Deutsch</button>
+    <button onclick="setLang('en')">🇬🇧 English</button>
+</div>
+
+<!-- ================================================================ -->
+<!-- DEUTSCH                                                           -->
+<!-- ================================================================ -->
+<div class="container" lang-content="de">
+
+    <div class="card">
+        <h2>1. Verantwortlicher</h2>
+        <p>
+            <strong>Musa Ergin</strong><br>
+            Website: <a href="https://musa-ergin.de">musa-ergin.de</a><br>
+            E-Mail: <a href="mailto:musa.ergin@web.de">musa.ergin@web.de</a>
+        </p>
+        <p>Stand: April 2026</p>
+    </div>
+
+    <div class="card">
+        <h2>2. Grundsatz: Keine Datenerhebung</h2>
+        <div class="highlight">
+            Modbus++ erhebt, speichert oder überträgt keine personenbezogenen Daten an externe Server oder Dritte.
+        </div>
+        <p>
+            Die App kommuniziert ausschließlich mit Modbus-Geräten, die der Benutzer selbst konfiguriert.
+            Alle gespeicherten Daten verbleiben ausschließlich lokal auf dem Gerät.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>3. Lokal gespeicherte Daten</h2>
+        <p>Die App speichert folgende Daten <strong>ausschließlich lokal</strong> auf dem Gerät:</p>
+        <ul>
+            <li><strong>Gerätekonfigurationen:</strong> Name, IP-Adresse, Port, Unit-ID und Registeradressen der konfigurierten Modbus-Geräte</li>
+            <li><strong>Messwert-Aufzeichnungen:</strong> Zeitgestempelte Messwerte aus Polling-Sitzungen (in lokaler SQLite-Datenbank)</li>
+            <li><strong>Alarm-Ereignisse:</strong> Protokoll ausgelöster Alarme mit Zeitstempel und Wert</li>
+            <li><strong>App-Einstellungen:</strong> Farbschema, Sprache, Widget-Konfiguration (in SharedPreferences)</li>
+        </ul>
+        <p>Diese Daten werden nicht verschlüsselt, da sie keine personenbezogenen Informationen enthalten. Sie können jederzeit in der App gelöscht werden.</p>
+    </div>
+
+    <div class="card">
+        <h2>4. Berechtigungen und deren Verwendung</h2>
+
+        <p><span class="badge">INTERNET</span> <strong>Netzwerkzugriff</strong><br>
+        Wird ausschließlich für TCP-Verbindungen zu Modbus-Geräten im lokalen Netzwerk verwendet, die der Benutzer selbst konfiguriert. Es werden keine Daten an das Internet gesendet.</p>
+
+        <p><span class="badge">BLUETOOTH_SCAN</span> <span class="badge">BLUETOOTH_CONNECT</span><br>
+        <strong>Bluetooth-Kommunikation</strong><br>
+        Wird verwendet, um Bluetooth-Modbus-Geräte in der Nähe zu finden und eine serielle Verbindung (SPP-Profil) herzustellen. Gerätedaten werden nicht gespeichert oder übertragen.</p>
+
+        <p><span class="badge">NFC</span> <strong>NFC-Tag-Kommunikation</strong><br>
+        Wird verwendet, um Verbindungsprofile (Name, IP, Port) auf NFC-Tags zu schreiben oder davon zu lesen. Es findet keine Kommunikation mit externen Diensten statt.</p>
+
+        <p><span class="badge">POST_NOTIFICATIONS</span> <strong>Benachrichtigungen</strong><br>
+        Wird verwendet, um lokale Alarm-Benachrichtigungen anzuzeigen, wenn konfigurierte Schwellwerte überschritten werden oder ein Verbindungsverlust eintritt. Es werden keine Push-Dienste oder externe Server verwendet.</p>
+
+        <p><span class="badge">ACCESS_NETWORK_STATE</span> <strong>Netzwerkstatus</strong><br>
+        Wird verwendet, um die Verfügbarkeit einer Netzwerkverbindung zu prüfen.</p>
+    </div>
+
+    <div class="card">
+        <h2>5. Dritte und Analyse-Tools</h2>
+        <p>
+            Die App verwendet <strong>keine</strong> Analyse-Dienste (Google Analytics, Firebase Analytics o. ä.),
+            <strong>keine</strong> Werbung und <strong>keine</strong> Crash-Reporting-Dienste,
+            die Daten an externe Server übertragen.
+        </p>
+        <p>Folgende Open-Source-Bibliotheken werden eingebunden, die selbst keine Daten erfassen:</p>
+        <ul>
+            <li>ZXing (QR-Code-Generierung und -Scan) – Apache 2.0</li>
+            <li>usb-serial-for-android (USB-Seriell-Kommunikation) – LGPL 2.1</li>
+            <li>Google Play Services Wearable API (Wear OS Datenübertragung, nur lokal zwischen Telefon und Uhr)</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>6. Wear OS</h2>
+        <p>
+            Wenn ein Wear-OS-Gerät gekoppelt ist, überträgt die App Messwerte über die lokale
+            Wearable Data API zwischen Telefon und Uhr. Diese Übertragung findet ausschließlich
+            lokal zwischen den gekoppelten Geräten statt und wird nicht über externe Server geleitet.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>7. Ihre Rechte (DSGVO)</h2>
+        <p>Da die App keine personenbezogenen Daten erhebt, entfallen die üblichen DSGVO-Auskunfts- und Löschpflichten gegenüber dem Anbieter. Alle lokal gespeicherten Daten können Sie jederzeit selbst in der App löschen:</p>
+        <ul>
+            <li>Messwert-Aufzeichnungen: LogScreen → Sitzung löschen</li>
+            <li>Alarm-Ereignisse: AlarmScreen → Alle löschen</li>
+            <li>Gerätekonfigurationen: Strukturliste → Struktur löschen</li>
+        </ul>
+        <p>Bei Fragen wenden Sie sich an: <a href="mailto:musa.ergin@web.de">musa.ergin@web.de</a></p>
+    </div>
+
+    <div class="card">
+        <h2>8. Änderungen dieser Datenschutzerklärung</h2>
+        <p>
+            Änderungen werden auf dieser Seite veröffentlicht. Das Datum der letzten Aktualisierung
+            ist am Anfang dieser Erklärung angegeben.
+        </p>
+    </div>
+
+</div>
+
+<!-- ================================================================ -->
+<!-- ENGLISH                                                           -->
+<!-- ================================================================ -->
+<div class="container" lang-content="en">
+
+    <div class="card">
+        <h2>1. Controller</h2>
+        <p>
+            <strong>Musa Ergin</strong><br>
+            Website: <a href="https://musa-ergin.de">musa-ergin.de</a><br>
+            E-Mail: <a href="mailto:musa.ergin@web.de">musa.ergin@web.de</a>
+        </p>
+        <p>Last updated: April 2026</p>
+    </div>
+
+    <div class="card">
+        <h2>2. Core Principle: No Data Collection</h2>
+        <div class="highlight">
+            Modbus++ does not collect, store, or transmit any personal data to external servers or third parties.
+        </div>
+        <p>
+            The app communicates exclusively with Modbus devices that the user configures themselves.
+            All stored data remains solely on the local device.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>3. Locally Stored Data</h2>
+        <p>The app stores the following data <strong>exclusively locally</strong> on the device:</p>
+        <ul>
+            <li><strong>Device configurations:</strong> Name, IP address, port, unit ID, and register addresses of configured Modbus devices</li>
+            <li><strong>Measurement recordings:</strong> Timestamped measurement values from polling sessions (in a local SQLite database)</li>
+            <li><strong>Alarm events:</strong> Log of triggered alarms with timestamp and value</li>
+            <li><strong>App settings:</strong> Color scheme, language, widget configuration (in SharedPreferences)</li>
+        </ul>
+        <p>This data is not encrypted as it does not contain personal information. It can be deleted at any time within the app.</p>
+    </div>
+
+    <div class="card">
+        <h2>4. Permissions and Their Use</h2>
+
+        <p><span class="badge">INTERNET</span> <strong>Network Access</strong><br>
+        Used exclusively for TCP connections to Modbus devices on the local network configured by the user. No data is sent to the internet.</p>
+
+        <p><span class="badge">BLUETOOTH_SCAN</span> <span class="badge">BLUETOOTH_CONNECT</span><br>
+        <strong>Bluetooth Communication</strong><br>
+        Used to discover nearby Bluetooth Modbus devices and establish a serial connection (SPP profile). Device data is not stored or transmitted externally.</p>
+
+        <p><span class="badge">NFC</span> <strong>NFC Tag Communication</strong><br>
+        Used to write or read connection profiles (name, IP, port) to/from NFC tags. No communication with external services takes place.</p>
+
+        <p><span class="badge">POST_NOTIFICATIONS</span> <strong>Notifications</strong><br>
+        Used to display local alarm notifications when configured thresholds are exceeded or a connection loss occurs. No push services or external servers are used.</p>
+
+        <p><span class="badge">ACCESS_NETWORK_STATE</span> <strong>Network State</strong><br>
+        Used to check the availability of a network connection.</p>
+    </div>
+
+    <div class="card">
+        <h2>5. Third Parties and Analytics</h2>
+        <p>
+            The app uses <strong>no</strong> analytics services (Google Analytics, Firebase Analytics, etc.),
+            <strong>no</strong> advertising, and <strong>no</strong> crash reporting services
+            that transmit data to external servers.
+        </p>
+        <p>The following open-source libraries are included, none of which collect data:</p>
+        <ul>
+            <li>ZXing (QR code generation and scanning) – Apache 2.0</li>
+            <li>usb-serial-for-android (USB serial communication) – LGPL 2.1</li>
+            <li>Google Play Services Wearable API (Wear OS data transfer, local only between phone and watch)</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>6. Wear OS</h2>
+        <p>
+            When a Wear OS device is paired, the app transmits measurement values via the local
+            Wearable Data API between phone and watch. This transfer occurs exclusively
+            locally between paired devices and is not routed through external servers.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>7. Your Rights (GDPR)</h2>
+        <p>Since the app does not collect personal data, standard GDPR disclosure and deletion obligations toward the provider do not apply. All locally stored data can be deleted at any time within the app:</p>
+        <ul>
+            <li>Measurement recordings: LogScreen → Delete session</li>
+            <li>Alarm events: AlarmScreen → Delete all</li>
+            <li>Device configurations: Structure list → Delete structure</li>
+        </ul>
+        <p>For questions, contact: <a href="mailto:musa.ergin@web.de">musa.ergin@web.de</a></p>
+    </div>
+
+    <div class="card">
+        <h2>8. Changes to This Privacy Policy</h2>
+        <p>
+            Changes will be published on this page. The date of the last update
+            is indicated at the top of this policy.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 Musa Ergin · <a href="https://musa-ergin.de">musa-ergin.de</a>
+</footer>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('[lang-content]').forEach(el => {
+            el.style.display = el.getAttribute('lang-content') === lang ? 'block' : 'none';
+        });
+        document.querySelectorAll('.lang-switch button').forEach(btn => {
+            btn.classList.toggle('active', btn.textContent.includes(lang === 'de' ? 'Deutsch' : 'English'));
+        });
+    }
+</script>
+
+</body>
+</html>
